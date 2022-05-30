@@ -23,7 +23,7 @@ function grade(nilai) {
             return 'C';
         case nilai >= 60:
             return 'D';
-        default:
+        case nilai >=0:
             return 'E';
     }
 }
