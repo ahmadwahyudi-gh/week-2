@@ -11,5 +11,16 @@ function triangleOfNumbers(n) {
         console.log(line);
     }
 }
-
-triangleOfNumbers(5);
+const readline= require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+readline.question('Enter your number:',number => {
+    if(isNaN(number)){
+        console.log('You entered not a number');
+    } else {
+        triangleOfNumbers(number);
+    }
+    
+    readline.close();
+});
