@@ -13,19 +13,21 @@ function parseNilai(nilai) {
     }
     return total / jumlah;
 }
-function grade(nilai) {
-    switch (parseNilai(nilai)) {
-        case nilai >= 90:
-            return 'A';
-        case nilai >= 80:
+average=parseNilai(nilaiUN);
+console.log(average);
+function grade(average) {
+    switch (true) {
+        case average>= 90:
+            return'A';
+        case average >= 80:
             return 'B';
-        case nilai >= 70:
+        case average >= 70:
             return 'C';
-        case nilai >= 60:
+        case average >= 60:
             return 'D';
-        case nilai >=0:
+        default:
             return 'E';
     }
 }
 console.log(parseNilai(nilaiUN));
-console.log(grade(nilaiUN));
+console.log(grade(average));
