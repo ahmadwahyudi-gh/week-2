@@ -35,7 +35,7 @@ const nameList=[
 // };
 // const search = searchName("an", setLimit, 4);
 
-const searchName = (nameToSearch, cbNameList, limit) => {
+const searchName = (nameToSearch, limit, cbNameList) => {
     let result = nameList.filter((nameList) =>
         nameList.toLowerCase().includes(nameToSearch.toLowerCase())
     );
@@ -51,5 +51,5 @@ const setLimit = (limit, result) => {
     }
     return resultLimited;
 }
-const search = searchName("an",setLimit, 3);
+const search = searchName("an",3, setLimit);
 console.log(search);
