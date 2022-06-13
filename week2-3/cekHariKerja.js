@@ -22,27 +22,27 @@ const printOutput = (cek) => {
 };
 
 //then...catch
-cekHariKerja("selasa")
+cekHariKerja("senin")
   .then(printOutput)
   .catch((err) => console.log(err));
 
 // callback function try catch
-const printOutput = (cek) => {
-  return`${cek} adalah hari kerja`;
-};
+// const printOutput = (cek) => {
+//   return`${cek} adalah hari kerja`;
+// };
 
-//try...catch
-const resultCekHariKerja = async (day, callback) => {
-  const result = await cekHariKerja(day);
-  try {
-    console.log(callback(day))
-  } catch (error) {
-    console.log(error);
-  } finally {
-  }
-};
+// //try...catch
+// const resultCekHariKerja = async (day, callback) => {
+//   const result = await cekHariKerja(day);
+//   try {
+//     console.log(callback(day))
+//   } catch (error) {
+//     console.log(error);
+//   } finally {
+//   }
+// };
 
-resultCekHariKerja("senin", printOutput)
+// resultCekHariKerja("senin", printOutput)
 
 /* Penjelasan then...catch & try...catch
 then...catch
