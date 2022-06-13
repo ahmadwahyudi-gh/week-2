@@ -6,7 +6,7 @@ const cekGrade = (score) => {
       } else {
         reject(new Error("Nilai harus bernilai 0 - 100!"));
       }
-    }, 300);
+    }, 3000);
   });
 };
 
@@ -20,7 +20,7 @@ const scoreToGrade = (score) => {
   console.log(`Nilai ${score} jika dikonversi jadi ${grade}`);
 };
 
-cekGrade(80)
+cekGrade(800)
   .then(scoreToGrade)
   .catch((err) => console.log(err));
 
