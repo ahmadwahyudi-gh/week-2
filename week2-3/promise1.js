@@ -20,7 +20,7 @@ const scoreToGrade = (score) => {
   console.log(`Nilai ${score} jika dikonversi jadi ${grade}`);
 };
 
-cekGrade(800)
+cekGrade(80)
   .then(scoreToGrade)
   .catch((err) => console.log(err));
 

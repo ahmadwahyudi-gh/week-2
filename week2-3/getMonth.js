@@ -20,7 +20,7 @@ const getMonth = (callback) => {
     } else {
       callback(new Error("Sorry data not found"), []);
     }
-  }, 4000);
+  }, 3000);
 };
 
 const showMonth = (isError, months) => {

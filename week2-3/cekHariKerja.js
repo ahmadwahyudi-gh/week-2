@@ -16,33 +16,33 @@ const cekHariKerja = (day) => {
 };
 // blok program
 
-// callback function then catch
+// // callback function then catch
+// const printOutput = (cek) => {
+//   console.log(`${cek} adalah hari kerja`);
+// };
+
+// //then...catch
+// cekHariKerja("amal")
+//   .then(printOutput)
+//   .catch((err) => console.log(err));
+
+//callback function try catch
 const printOutput = (cek) => {
-  console.log(`${cek} adalah hari kerja`);
+  return`${cek} adalah hari kerja`;
 };
 
-//then...catch
-cekHariKerja("senin")
-  .then(printOutput)
-  .catch((err) => console.log(err));
+//try...catch
+const resultCekHariKerja = async (day, callback) => {
+  const result = await cekHariKerja(day);
+  try {
+    console.log(callback(day))
+  } catch (error) {
+    console.log(error);
+  } finally {
+  }
+};
 
-// callback function try catch
-// const printOutput = (cek) => {
-//   return`${cek} adalah hari kerja`;
-// };
-
-// //try...catch
-// const resultCekHariKerja = async (day, callback) => {
-//   const result = await cekHariKerja(day);
-//   try {
-//     console.log(callback(day))
-//   } catch (error) {
-//     console.log(error);
-//   } finally {
-//   }
-// };
-
-// resultCekHariKerja("senin", printOutput)
+resultCekHariKerja("senin", printOutput)
 
 /* Penjelasan then...catch & try...catch
 then...catch
