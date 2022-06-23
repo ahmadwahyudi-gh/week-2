@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ahmad"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-06-24 02:06:56 AM"/>
+        <attribute name="created" value="QWhtYWQ7TEFQVE9QLVA4RkNNU0tNOzIwMjItMDYtMjM7MDk6NTM6MDggQU07Mjg0MA=="/>
+        <attribute name="edited" value="QWhtYWQ7TEFQVE9QLVA4RkNNU0tNOzIwMjItMDYtMjQ7MDI6MDY6NTYgQU07MjsyOTQ0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="harga, jarak, potongan, biayaAntar, nominalPajak, SubTotal" type="Integer" array="False" size=""/>
+            <declare name="voucher" type="String" array="False" size=""/>
+            <declare name="isPajak" type="Boolean" array="False" size=""/>
+            <input variable="harga"/>
+            <input variable="voucher"/>
+            <if expression="voucher==&quot;ARKAFOODS&quot;">
+                <then>
+                    <if expression="harga &gt; 100000">
+                        <then>
+                            <assign variable="potongan" expression="50000"/>
+                        </then>
+                        <else>
+                            <if expression="harga&lt;100000">
+                                <then>
+                                    <assign variable="potongan" expression="0.5*harga"/>
+                                </then>
+                                <else>
+                                    <assign variable="potongan" expression="0"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="voucher==&quot;DITRAKTIRDEMY&quot;">
+                        <then>
+                            <if expression="harga&gt;50000">
+                                <then>
+                                    <assign variable="potongan" expression="30000"/>
+                                </then>
+                                <else>
+                                    <if expression="harga&gt;25000">
+                                        <then>
+                                            <assign variable="potongan" expression="0.6*harga"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="potongan" expression="0"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+            <output expression="potongan" newline="True"/>
+            <input variable="jarak"/>
+            <if expression="jarak&lt;=2">
+                <then>
+                    <assign variable="biayaAntar" expression="5000"/>
+                </then>
+                <else>
+                    <assign variable="biayaAntar" expression="5000+((jarak-2)*3000)"/>
+                </else>
+            </if>
+            <output expression="biayaAntar" newline="True"/>
+            <assign variable="isPajak" expression="True"/>
+            <if expression="!isPajak">
+                <then>
+                    <assign variable="nominalPajak" expression="0"/>
+                </then>
+                <else>
+                    <assign variable="nominalPajak" expression="0.05*harga"/>
+                </else>
+            </if>
+            <output expression="nominalPajak" newline="True"/>
+            <assign variable="SubTotal" expression="harga-potongan+biayaAntar+nominalPajak"/>
+            <output expression="SubTotal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

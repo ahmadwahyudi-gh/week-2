@@ -1,13 +1,13 @@
 const arkFood = (harga, voucher, jarak, isPajak) => {
   let potongan, nominalPajak, subTotal;
 
-  if (voucher === manualLowerCase("ARKAFOOD5")) {
+  if (voucher === manualLowerCase("FAZZFOOD50")) {
     if (harga > 100000) {
       potongan = 50000;
     } else if (harga > 50000) {
       potongan = 0.5 * harga;
     } else potongan = 0;
-  } else if (voucher === manualLowerCase("DITRAKTIRDEMY")) {
+  } else if (voucher === manualLowerCase("FAZZFOOD60")) {
     if (harga > 50000) {
       potongan = 30000;
     } else if (harga > 25000) {
@@ -42,4 +42,4 @@ const manualLowerCase = (word) => {
   return result;
 };
 
-arkFood(75000, "arkafood5", 5, true);
+arkFood(75000, "fazzfood50", 5, true);
