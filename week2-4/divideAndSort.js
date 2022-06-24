@@ -1,20 +1,20 @@
 const divideAndSort = (number) => {
-  const arrayOfStringFromNumber = number.toString().split("0");
+  const arrayNumToStr = number.toString().split("0");
 
-  let arrayOfNumber = [],
-    sortedArrayOfString = [],
-    joinedStringed = [];
+  let arrayNum = [],
+    sortedArrStr = [],
+    joinedStr = [];
 
-  for (let i = 0; i < arrayOfStringFromNumber.length; i++) {
-    arrayOfNumber[i] = arrayOfStringFromNumber[i]
+  for (let i = 0; i < arrayNumToStr.length; i++) {
+    arrayNum[i] = arrayNumToStr[i]
       .split("")
       .map((string) => Number(string))
       .sort((a, b) => a - b);
-    sortedArrayOfString[i] = arrayOfNumber[i].map((number) => number.toString());
-    joinedStringed[i] = sortedArrayOfString[i].join("");
-    // console.log(joinedStringed[i]);
+    sortedArrStr[i] = arrayNum[i].map((number) => number.toString());
+    joinedStr[i] = sortedArrStr[i].join("");
+    // console.log(joinedStr[i]);
   }
-  let joinAll = joinedStringed.join("");
+  let joinAll = joinedStr.join("");
   return (joinAll = Number(joinAll));
 };
 
